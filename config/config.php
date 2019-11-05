@@ -26,7 +26,7 @@ return [
 
     'stubs' => [
         'enabled' => false,
-        'path' => base_path() . '/vendor/omt/laravel-modules/src/Commands/stubs',
+        'path' => base_path() . '/vendor/omt/core-modules/src/Commands/stubs',
         'files' => [
             'routes/web' => 'Routes/web.php',
             'routes/api' => 'Routes/api.php',
@@ -174,7 +174,7 @@ return [
     ],
     /*
     |--------------------------------------------------------------------------
-    | Choose what laravel-modules will register as custom namespaces.
+    | Choose what core-modules will register as custom namespaces.
     | Setting one to false will require you to register that part
     | in your own Service Provider class.
     |--------------------------------------------------------------------------

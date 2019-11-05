@@ -1,5 +1,5 @@
 {
-    "name": "omt/laravel-modules",
+    "name": "omt/core-modules",
     "description": "Core Module management",
     "keywords": [
         "modules",
@@ -12,7 +12,7 @@
     "authors": [{
         "name": "MaoDK",
         "email": "maodk61@gmail.com",
-        "homepage": "https://nicolaswidart.com",
+        "homepage": "https://maodk.com",
         "role": "Developer"
     }],
     "require": {

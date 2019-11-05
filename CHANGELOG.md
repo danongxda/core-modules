@@ -1,6 +1,6 @@
 # Changelog
 
-All Notable changes to `laravel-modules` will be documented in this file.
+All Notable changes to `core-modules` will be documented in this file.
 
 ## Next
 
@@ -27,7 +27,7 @@ All Notable changes to `laravel-modules` will be documented in this file.
 
 ### Added
 
-- New File Activator feature. [PR #790](https://github.com/maoht87/laravel-modules/pull/790) from @ryssbowh
+- New File Activator feature. [PR #790](https://github.com/maoht87/core-modules/pull/790) from @ryssbowh
     
     This feature changes how modules are activated and de-activated. Currently module statuses are stored on disk, this features adds the possibility of storing this status information in a database.
     
@@ -35,7 +35,7 @@ All Notable changes to `laravel-modules` will be documented in this file.
     
 ### Changed
 
-- Alternate way to define the namespace of modules in [PR #776](https://github.com/maoht87/laravel-modules/pull/776) by @daison12006013
+- Alternate way to define the namespace of modules in [PR #776](https://github.com/maoht87/core-modules/pull/776) by @daison12006013
 
     This allows to have the content of the module under an `src/` folder for example.
 - **BREAKING** New way to handle active and inactive modules.
@@ -203,7 +203,7 @@ All Notable changes to `laravel-modules` will be documented in this file.
 ## Changed
 
 - added config_path helper to helpers for Lumen support
-- updated readme on how to install laravel-modules in Lumen
+- updated readme on how to install core-modules in Lumen
 
 ## 2.5.0 - 2017-10-03
 
@@ -512,7 +512,7 @@ All Notable changes to `laravel-modules` will be documented in this file.
 
 ### Fixed
 
-- Module generation namespace now works with `StudlyCase` ([Issue #14](https://github.com/maoht87/laravel-modules/issues/14))
+- Module generation namespace now works with `StudlyCase` ([Issue #14](https://github.com/maoht87/core-modules/issues/14))
 - No module namespace fix (#13)
 
 ### Changed

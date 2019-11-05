@@ -194,7 +194,7 @@ class LaravelFileRepositoryTest extends BaseTestCase
     {
         $this->app['config']->set('modules.stubs.enabled', true);
 
-        $this->assertEquals(base_path('vendor/omt/laravel-modules/src/Commands/stubs'), $this->repository->getStubPath());
+        $this->assertEquals(base_path('vendor/omt/core-modules/src/Commands/stubs'), $this->repository->getStubPath());
     }
 
     /** @test */

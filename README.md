@@ -1,6 +1,6 @@
-# Laravel-Modules
+# Core-Modules
 
-| **Laravel**  |  **laravel-modules** |
+| **Laravel**  |  **core-modules** |
 |---|---|
 | 5.4  | ^1.0  |
 | 5.5  | ^2.0  |
