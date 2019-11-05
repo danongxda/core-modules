@@ -1,13 +1,13 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Omt\Modules\Commands;
 
 use Illuminate\Support\Str;
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
-use Nwidart\Modules\Support\Migrations\NameParser;
-use Nwidart\Modules\Support\Migrations\SchemaParser;
-use Nwidart\Modules\Support\Stub;
-use Nwidart\Modules\Traits\ModuleCommandTrait;
+use Omt\Modules\Support\Config\GenerateConfigReader;
+use Omt\Modules\Support\Migrations\NameParser;
+use Omt\Modules\Support\Migrations\SchemaParser;
+use Omt\Modules\Support\Stub;
+use Omt\Modules\Traits\ModuleCommandTrait;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Nwidart\Modules\Tests\Commands;
+namespace Omt\Modules\Tests\Commands;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Contracts\ActivatorInterface;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Tests\BaseTestCase;
+use Omt\Modules\Contracts\ActivatorInterface;
+use Omt\Modules\Contracts\RepositoryInterface;
+use Omt\Modules\Tests\BaseTestCase;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class ModuleMakeCommandTest extends BaseTestCase

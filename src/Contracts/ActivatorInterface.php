@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Contracts;
+namespace Omt\Modules\Contracts;
 
-use Nwidart\Modules\Module;
+use Omt\Modules\Module;
 
 interface ActivatorInterface
 {

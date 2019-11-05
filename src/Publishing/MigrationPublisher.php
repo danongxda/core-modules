@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Publishing;
+namespace Omt\Modules\Publishing;
 
-use Nwidart\Modules\Migrations\Migrator;
+use Omt\Modules\Migrations\Migrator;
 
 class MigrationPublisher extends AssetPublisher
 {

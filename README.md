@@ -17,7 +17,7 @@
 | 5.8  | ^5.0  |
 | 6.0  | ^6.0  |
 
-`nwidart/laravel-modules` is a Laravel package which created to manage your large Laravel app using modules. Module is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 6.
+`maoht87/laravel-modules` is a Laravel package which created to manage your large Laravel app using modules. Module is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 6.
 
 This package is a re-published, re-organised and maintained version of [pingpong/modules](https://github.com/pingpong-labs/modules), which isn't maintained anymore. This package is used in [AsgardCMS](https://asgardcms.com/).
 
@@ -30,7 +30,7 @@ Find out why you should use this package in the article: [Writing modular applic
 To install through Composer, by run the following command:
 
 ``` bash
-composer require nwidart/laravel-modules
+composer require maoht87/laravel-modules
 ```
 
 The package will automatically register a service provider and alias.
@@ -38,7 +38,7 @@ The package will automatically register a service provider and alias.
 Optionally, publish the package's configuration file by running:
 
 ``` bash
-php artisan vendor:publish --provider="Nwidart\Modules\LaravelModulesServiceProvider"
+php artisan vendor:publish --provider="Omt\Modules\LaravelModulesServiceProvider"
 ```
 
 ### Autoloading

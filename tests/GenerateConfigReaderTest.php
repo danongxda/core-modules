@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
-use Nwidart\Modules\Support\Config\GeneratorPath;
+use Omt\Modules\Support\Config\GenerateConfigReader;
+use Omt\Modules\Support\Config\GeneratorPath;
 
 final class GenerateConfigReaderTest extends BaseTestCase
 {

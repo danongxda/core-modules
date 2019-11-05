@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Contracts;
+namespace Omt\Modules\Contracts;
 
 interface RunableInterface
 {

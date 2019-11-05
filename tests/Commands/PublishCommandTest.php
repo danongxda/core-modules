@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests\Commands;
+namespace Omt\Modules\Tests\Commands;
 
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Tests\BaseTestCase;
+use Omt\Modules\Contracts\RepositoryInterface;
+use Omt\Modules\Tests\BaseTestCase;
 
 class PublishCommandTest extends BaseTestCase
 {

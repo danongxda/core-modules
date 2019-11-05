@@ -1,14 +1,14 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
 use Illuminate\Filesystem\Filesystem;
-use Nwidart\Modules\Collection;
-use Nwidart\Modules\Contracts\ActivatorInterface;
-use Nwidart\Modules\Exceptions\InvalidAssetPath;
-use Nwidart\Modules\Exceptions\ModuleNotFoundException;
-use Nwidart\Modules\Laravel\LaravelFileRepository;
-use Nwidart\Modules\Module;
+use Omt\Modules\Collection;
+use Omt\Modules\Contracts\ActivatorInterface;
+use Omt\Modules\Exceptions\InvalidAssetPath;
+use Omt\Modules\Exceptions\ModuleNotFoundException;
+use Omt\Modules\Laravel\LaravelFileRepository;
+use Omt\Modules\Module;
 
 class LaravelFileRepositoryTest extends BaseTestCase
 {
@@ -194,7 +194,7 @@ class LaravelFileRepositoryTest extends BaseTestCase
     {
         $this->app['config']->set('modules.stubs.enabled', true);
 
-        $this->assertEquals(base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'), $this->repository->getStubPath());
+        $this->assertEquals(base_path('vendor/omt/laravel-modules/src/Commands/stubs'), $this->repository->getStubPath());
     }
 
     /** @test */

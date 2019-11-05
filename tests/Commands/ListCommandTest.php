@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Omt\Modules\Commands;
 
 use Illuminate\Filesystem\Filesystem;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Tests\BaseTestCase;
+use Omt\Modules\Contracts\RepositoryInterface;
+use Omt\Modules\Tests\BaseTestCase;
 
 class ListCommandTest extends BaseTestCase
 {
