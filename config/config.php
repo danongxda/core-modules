@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'namespace' => 'Modules',
+    'namespace' => 'App/Modules',
 
     /*
     |--------------------------------------------------------------------------
@@ -153,10 +153,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'so_module',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'MaoDK',
+            'email' => 'maodk61@gmail.com',
         ],
     ],
     /*
@@ -169,7 +169,7 @@ return [
     */
     'cache' => [
         'enabled' => false,
-        'key' => 'laravel-modules',
+        'key' => 'so-modules',
         'lifetime' => 60,
     ],
     /*
