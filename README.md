@@ -9,14 +9,14 @@
 | 5.8  | ^5.0  |
 | 6.0  | ^6.0  |
 
-`maoht87/laravel-modules` is a Laravel package which created to manage your large Laravel app using modules. Module is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 6.
+`maoht87/core-modules` is a Laravel package which created to manage your large Laravel app using modules. Module is like a Laravel package, it has some views, controllers or models. This package is supported and tested in Laravel 6.
 
 ## Install
 
 To install through Composer, by run the following command:
 
 ``` bash
-composer require maoht87/laravel-modules
+composer require maoht87/core-modules
 ```
 
 The package will automatically register a service provider and alias.
