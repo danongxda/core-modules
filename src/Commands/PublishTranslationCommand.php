@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Omt\Modules\Commands;
 
 use Illuminate\Console\Command;
-use Nwidart\Modules\Module;
-use Nwidart\Modules\Publishing\LangPublisher;
+use Omt\Modules\Module;
+use Omt\Modules\Publishing\LangPublisher;
 use Symfony\Component\Console\Input\InputArgument;
 
 class PublishTranslationCommand extends Command

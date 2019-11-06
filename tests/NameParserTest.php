@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
-use Nwidart\Modules\Support\Migrations\NameParser;
+use Omt\Modules\Support\Migrations\NameParser;
 
 class NameParserTest extends \PHPUnit\Framework\TestCase
 {

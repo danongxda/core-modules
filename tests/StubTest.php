@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
 use Illuminate\Support\Str;
-use Nwidart\Modules\Support\Stub;
+use Omt\Modules\Support\Stub;
 
 class StubTest extends BaseTestCase
 {

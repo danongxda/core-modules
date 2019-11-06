@@ -1,15 +1,15 @@
 <?php
 
-namespace Nwidart\Modules\Generators;
+namespace Omt\Modules\Generators;
 
 use Illuminate\Config\Repository as Config;
 use Illuminate\Console\Command as Console;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Contracts\ActivatorInterface;
-use Nwidart\Modules\FileRepository;
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
-use Nwidart\Modules\Support\Stub;
+use Omt\Modules\Contracts\ActivatorInterface;
+use Omt\Modules\FileRepository;
+use Omt\Modules\Support\Config\GenerateConfigReader;
+use Omt\Modules\Support\Stub;
 
 class ModuleGenerator extends Generator
 {
@@ -51,7 +51,7 @@ class ModuleGenerator extends Generator
     /**
      * The module instance.
      *
-     * @var \Nwidart\Modules\Module
+     * @var \Omt\Modules\Module
      */
     protected $module;
 
@@ -227,7 +227,7 @@ class ModuleGenerator extends Generator
     /**
      * Get the module instance.
      *
-     * @return \Nwidart\Modules\Module
+     * @return \Omt\Modules\Module
      */
     public function getModule()
     {
@@ -371,26 +371,31 @@ class ModuleGenerator extends Generator
      */
     public function generateResources()
     {
-        $this->console->call('module:make-seed', [
-            'name' => $this->getName(),
-            'module' => $this->getName(),
-            '--master' => true,
-        ]);
+        if (GenerateConfigReader::read('seeder')->generate() === true) {
+            $this->console->call('module:make-seed', [
+                'name' => $this->getName(),
+                'module' => $this->getName(),
+                '--master' => true,
+            ]);
+        }
 
-        $this->console->call('module:make-provider', [
-            'name' => $this->getName() . 'ServiceProvider',
-            'module' => $this->getName(),
-            '--master' => true,
-        ]);
+        if (GenerateConfigReader::read('provider')->generate() === true) {
+            $this->console->call('module:make-provider', [
+                'name' => $this->getName() . 'ServiceProvider',
+                'module' => $this->getName(),
+                '--master' => true,
+            ]);
+            $this->console->call('module:route-provider', [
+                'module' => $this->getName(),
+            ]);
+        }
 
-        $this->console->call('module:route-provider', [
-            'module' => $this->getName(),
-        ]);
-
-        $this->console->call('module:make-controller', [
-            'controller' => $this->getName() . 'Controller',
-            'module' => $this->getName(),
-        ]);
+        if (GenerateConfigReader::read('controller')->generate() === true) {
+            $this->console->call('module:make-controller', [
+                'controller' => $this->getName() . 'Controller',
+                'module' => $this->getName(),
+            ]);
+        }
     }
 
     /**
@@ -436,6 +441,11 @@ class ModuleGenerator extends Generator
 
         $replaces = [];
 
+        if ($stub === 'json' || $stub === 'composer') {
+            if (in_array('PROVIDER_NAMESPACE', $keys, true) === false) {
+                $keys[] = 'PROVIDER_NAMESPACE';
+            }
+        }
         foreach ($keys as $key) {
             if (method_exists($this, $method = 'get' . ucfirst(Str::studly(strtolower($key))) . 'Replacement')) {
                 $replaces[$key] = $this->$method();
@@ -540,5 +550,10 @@ class ModuleGenerator extends Generator
     protected function getAuthorEmailReplacement()
     {
         return $this->module->config('composer.author.email');
+    }
+
+    protected function getProviderNamespaceReplacement(): string
+    {
+        return str_replace('\\', '\\\\', GenerateConfigReader::read('provider')->getNamespace());
     }
 }

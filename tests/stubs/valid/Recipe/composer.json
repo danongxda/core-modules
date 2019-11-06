@@ -1,6 +1,6 @@
 {
-	"name": "nwidart/recipe",
-	"description": "",
+    "name": "omt/recipe",
+    "description": "",
     "type": "asgard-module",
     "require": {
         "php": ">=5.4",
@@ -19,15 +19,13 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-	"authors": [
-		{
-			"name": "Pingpong Labs",
-			"email": "pingpong.labs@gmail.com"
-		}
-	],
-	"autoload": {
-		"psr-4": {
-			"Modules\\Recipe\\": ""
-		}
-	}
+    "authors": [{
+        "name": "MaoDK",
+        "email": "maodk61@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Recipe\\": ""
+        }
+    }
 }

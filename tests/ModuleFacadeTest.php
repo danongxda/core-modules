@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
-use Nwidart\Modules\Facades\Module;
+use Omt\Modules\Facades\Module;
 
 class ModuleFacadeTest extends BaseTestCase
 {

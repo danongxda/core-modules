@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Commands;
+namespace Omt\Modules\Commands;
 
 use Illuminate\Console\Command;
-use Nwidart\Modules\Json;
-use Nwidart\Modules\Process\Installer;
+use Omt\Modules\Json;
+use Omt\Modules\Process\Installer;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

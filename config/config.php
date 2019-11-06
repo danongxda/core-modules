@@ -1,6 +1,6 @@
 <?php
 
-use Nwidart\Modules\Activators\FileActivator;
+use Omt\Modules\Activators\FileActivator;
 
 return [
 
@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'namespace' => 'Modules',
+    'namespace' => 'App/Modules',
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
 
     'stubs' => [
         'enabled' => false,
-        'path' => base_path() . '/vendor/nwidart/laravel-modules/src/Commands/stubs',
+        'path' => base_path() . '/vendor/omt/core-modules/src/Commands/stubs',
         'files' => [
             'routes/web' => 'Routes/web.php',
             'routes/api' => 'Routes/api.php',
@@ -43,7 +43,7 @@ return [
             'routes/web' => ['LOWER_NAME', 'STUDLY_NAME'],
             'routes/api' => ['LOWER_NAME'],
             'webpack' => ['LOWER_NAME'],
-            'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE'],
+            'json' => ['LOWER_NAME', 'STUDLY_NAME', 'MODULE_NAMESPACE', 'PROVIDER_NAMESPACE'],
             'views/index' => ['LOWER_NAME'],
             'views/master' => ['LOWER_NAME', 'STUDLY_NAME'],
             'scaffold/config' => ['STUDLY_NAME'],
@@ -54,6 +54,7 @@ return [
                 'AUTHOR_NAME',
                 'AUTHOR_EMAIL',
                 'MODULE_NAMESPACE',
+                'PROVIDER_NAMESPACE',
             ],
         ],
         'gitkeep' => true,
@@ -105,6 +106,7 @@ return [
             'seeder' => ['path' => 'Database/Seeders', 'generate' => true],
             'factory' => ['path' => 'Database/factories', 'generate' => true],
             'model' => ['path' => 'Entities', 'generate' => true],
+            'routes' => ['path' => 'Routes', 'generate' => true],
             'controller' => ['path' => 'Http/Controllers', 'generate' => true],
             'filter' => ['path' => 'Http/Middleware', 'generate' => true],
             'request' => ['path' => 'Http/Requests', 'generate' => true],
@@ -151,10 +153,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'so_module',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'MaoDK',
+            'email' => 'maodk61@gmail.com',
         ],
     ],
     /*
@@ -167,12 +169,12 @@ return [
     */
     'cache' => [
         'enabled' => false,
-        'key' => 'laravel-modules',
+        'key' => 'so-modules',
         'lifetime' => 60,
     ],
     /*
     |--------------------------------------------------------------------------
-    | Choose what laravel-modules will register as custom namespaces.
+    | Choose what core-modules will register as custom namespaces.
     | Setting one to false will require you to register that part
     | in your own Service Provider class.
     |--------------------------------------------------------------------------

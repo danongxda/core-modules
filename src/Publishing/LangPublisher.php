@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Publishing;
+namespace Omt\Modules\Publishing;
 
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
+use Omt\Modules\Support\Config\GenerateConfigReader;
 
 class LangPublisher extends Publisher
 {

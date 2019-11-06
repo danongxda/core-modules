@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Tests\Commands;
+namespace Omt\Modules\Tests\Commands;
 
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Module;
-use Nwidart\Modules\Tests\BaseTestCase;
+use Omt\Modules\Contracts\RepositoryInterface;
+use Omt\Modules\Module;
+use Omt\Modules\Tests\BaseTestCase;
 
 class EnableCommandTest extends BaseTestCase
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Nwidart\Modules\Tests\Commands;
+namespace Omt\Modules\Tests\Commands;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Contracts\ActivatorInterface;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Tests\BaseTestCase;
+use Omt\Modules\Contracts\ActivatorInterface;
+use Omt\Modules\Contracts\RepositoryInterface;
+use Omt\Modules\Tests\BaseTestCase;
 use Spatie\Snapshots\MatchesSnapshots;
 
 class ModuleMakeCommandTest extends BaseTestCase
@@ -290,6 +290,20 @@ class ModuleMakeCommandTest extends BaseTestCase
     }
 
     /** @test */
+    public function it_can_ignore_resource_folders_to_generate()
+    {
+        $this->app['config']->set('modules.paths.generator.seeder', ['path' => 'Database/Seeders', 'generate' => false]);
+        $this->app['config']->set('modules.paths.generator.provider', ['path' => 'Providers', 'generate' => false]);
+        $this->app['config']->set('modules.paths.generator.controller', ['path' => 'Http/Controllers', 'generate' => false]);
+
+        $this->artisan('module:make', ['name' => ['Blog']]);
+
+        $this->assertDirectoryNotExists($this->modulePath . '/Database/Seeders');
+        $this->assertDirectoryNotExists($this->modulePath . '/Providers');
+        $this->assertDirectoryNotExists($this->modulePath . '/Http/Controllers');
+    }
+
+    /** @test */
     public function it_generates_enabled_module()
     {
         $this->artisan('module:make', ['name' => ['Blog']]);
@@ -303,5 +317,19 @@ class ModuleMakeCommandTest extends BaseTestCase
         $this->artisan('module:make', ['name' => ['Blog'], '--disabled' => true]);
 
         $this->assertTrue($this->repository->isDisabled('Blog'));
+    }
+
+    /** @test */
+    public function it_generes_module_with_new_provider_location()
+    {
+        $this->app['config']->set('modules.paths.generator.provider', ['path' => 'Base/Providers', 'generate' => true]);
+
+        $this->artisan('module:make', ['name' => ['Blog']]);
+
+        $this->assertDirectoryExists($this->modulePath . '/Base/Providers');
+        $file = $this->finder->get($this->modulePath . '/module.json');
+        $this->assertMatchesSnapshot($file);
+        $file = $this->finder->get($this->modulePath . '/composer.json');
+        $this->assertMatchesSnapshot($file);
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
-use Nwidart\Modules\Support\Config\GenerateConfigReader;
-use Nwidart\Modules\Support\Config\GeneratorPath;
+use Omt\Modules\Support\Config\GenerateConfigReader;
+use Omt\Modules\Support\Config\GeneratorPath;
 
 final class GenerateConfigReaderTest extends BaseTestCase
 {
@@ -51,5 +51,16 @@ final class GenerateConfigReaderTest extends BaseTestCase
         $this->assertInstanceOf(GeneratorPath::class, $seedConfig);
         $this->assertFalse($seedConfig->getPath());
         $this->assertFalse($seedConfig->generate());
+    }
+
+    /** @test */
+    public function it_can_guess_namespace_from_path()
+    {
+        $this->app['config']->set('modules.paths.generator.provider', ['path' => 'Base/Providers', 'generate' => true]);
+
+        $config = GenerateConfigReader::read('provider');
+
+        $this->assertEquals('Base/Providers', $config->getPath());
+        $this->assertEquals('Base\Providers', $config->getNamespace());
     }
 }

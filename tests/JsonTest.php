@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Tests;
+namespace Omt\Modules\Tests;
 
-use Nwidart\Modules\Exceptions\InvalidJsonException;
-use Nwidart\Modules\Json;
+use Omt\Modules\Exceptions\InvalidJsonException;
+use Omt\Modules\Json;
 
 class JsonTest extends BaseTestCase
 {
